@@ -29,7 +29,7 @@
   },
   "hassio_api": true,
   "homeassistant_api": false,
-  "host_network": true,
+  "host_network": false,
   "options": {
     "log_level": "info"
   },
