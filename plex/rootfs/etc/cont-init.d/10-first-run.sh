@@ -47,7 +47,7 @@ EOF
     hass.log.debug "Claiming server with PlexOnline..."
     claim_code=$(hass.config.get 'claim_code')
     loginInfo="$(curl -X POST \
-        -H "X -Plex-Client-Identifier: ${clientId}" \
+        -H "X-Plex-Client-Identifier: ${clientId}" \
         -H 'X-Plex-Product: Plex Media Server' \
         -H 'X-Plex-Version: 1.1' \
         -H 'X-Plex-Provides: server' \
