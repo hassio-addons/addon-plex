@@ -31,10 +31,12 @@
   "homeassistant_api": false,
   "host_network": false,
   "options": {
-    "log_level": "info"
+    "log_level": "info",
+    "claim_code": ""
   },
   "schema": {
-    "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)"
+    "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)",
+    "claim_code": "str"
   },
   "environment": {
     "LOG_FORMAT": "{LEVEL}: {MESSAGE}"
