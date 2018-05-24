@@ -31,7 +31,10 @@ comparison to installing any other Hass.io add-on.
 
 1. [Add our Hass.io add-ons repository][repository] to your Hass.io instance.
 1. Install the "Plex" add-on.
-1. Start the "Plex" add-on
+1. Surf to https://www.plex.tv/claim and get your claim token.
+1. Update the add-on config with the claim code you've got in the previous step.
+1. Save the add-on configuration.
+1. Start the "Plex" add-on.
 1. Check the logs of the "Plex" add-on to see if everything went well.
 1. Login the the Plex admin interface and complete the setup process.
 
