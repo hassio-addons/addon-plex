@@ -129,10 +129,10 @@ The plugin also allows you to add and install custom plugins.
 
 Set this variable to `true` to enable it.
 
-## Samba add-on conflicts
+## AirSonos add-on conflicts
 
 Plex Media server uses port `1900` for access to the Plex DLNA Server. This port
-is also used by the Samba add-on.
+is also used by the AirSonos add-on.
 
 In case they conflict, the Plex Media Server add-on will fail to start.
 The following error message is shown in the Hass.io system log:
@@ -147,7 +147,7 @@ bind: address already in use
 
 You have two choices:
 
-- Disable or remove the Samba add-on
+- Disable or remove the AirSonos add-on
 - Change the port number 1900 to something else.
 
 The last option will cause you to lose the DLNA capabilities of the
