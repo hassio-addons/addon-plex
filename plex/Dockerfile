@@ -12,10 +12,10 @@ RUN \
         uuid-runtime=2.27.1-6ubuntu3 \
         unrar=1:5.3.2-1 \
     \
-    && if [[ "${BUILD_ARCH}" = "aarch64" ]]; then ARCH="arm7"; fi \
-    && if [[ "${BUILD_ARCH}" = "amd64" ]]; then ARCH="x86_64"; fi \
-    && if [[ "${BUILD_ARCH}" = "armhf" ]]; then ARCH="arm7"; fi \
-    && if [[ "${BUILD_ARCH}" = "i386" ]]; then ARCH="x86"; fi \
+    && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm7"; fi \
+    && if [ "${BUILD_ARCH}" = "amd64" ]; then ARCH="x86_64"; fi \
+    && if [ "${BUILD_ARCH}" = "armhf" ]; then ARCH="arm7"; fi \
+    && if [ "${BUILD_ARCH}" = "i386" ]; then ARCH="x86"; fi \
     \
     && curl -J -L -o /tmp/plexmediaserver.tgz \
         "https://downloads.plex.tv/plex-media-server/1.13.0.5023-31d3c0c65/PlexMediaServer-1.13.0.5023-31d3c0c65-${ARCH}.spk" \
