@@ -1,4 +1,4 @@
-# Community Hass.io Add-ons: Plex
+# Community Hass.io Add-ons: Plex Media Server
 
 [![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
@@ -30,13 +30,13 @@ The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Hass.io add-on.
 
 1. [Add our Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install the "Plex" add-on.
+1. Install the "Plex Media Server" add-on.
 1. Surf to <https://www.plex.tv/claim> and get your claim token.
 1. Update the add-on config with the claim code you've got in the previous step.
 1. Save the add-on configuration.
-1. Start the "Plex" add-on.
-1. Check the logs of the "Plex" add-on to see if everything went well.
-1. Login the the Plex admin interface and complete the setup process.
+1. Start the "Plex Media Server" add-on.
+1. Check the logs of the "Plex Media Server" to see if everything went well.
+1. Login to the Plex admin interface and complete the setup process.
 
 **NOTE**: Do not add this repository to Hass.io, please use:
 `https://github.com/hassio-addons/repository`.
@@ -64,7 +64,9 @@ Example add-on configuration:
 
 ```json
 {
-  "log_level": "info"
+  "log_level": "info",
+  "claim_code": "claim-cAMrqFrenckFU4x445Tn",
+  "webtools": true
 }
 ```
 
@@ -87,6 +89,48 @@ Please note that each level automatically includes log messages from a
 more severe level, e.g., `debug` also shows `info` messages. By default,
 the `log_level` is set to `info`, which is the recommended setting unless
 you are troubleshooting.
+
+### Option: `claim_code`
+
+To allow your server to sign-in to your Plex account, it needs a so-called
+"Claim Code". Sign-ing into Plex allows Plex to locate and connect to
+your server and unlocks all kinds of features as well.
+
+In order to get your code surf to <https://www.plex.com/claim>.
+
+This code is only used once by the add-on. As soon as the
+server is successfully authenticated with Plex, the code may be removed.
+
+### Option: `webtools`
+
+[WebTools][webtools] is a plug-in that contains a collection of tools
+for the Plex Media Server.
+
+Some of the tools:
+
+- Manage Subs (Subtitles)
+- Logs (PMS)
+- UAS (Unsupported App Store)
+- FindMedia
+- PlayLists
+- TechInfo
+
+The plugin also allows you to add and install custom plugins.
+
+Set this variable to `true` to enable it.
+
+## Known issues and limitations
+
+- This add-on does support ARM-based devices, nevertheless, they must
+  at least be an ARMv7 device. (Raspberry Pi 1 and Zero is not supported).
+- This add-on will be able to run on a Raspberry Pi. While it still can be
+  useful, don't expect too much. In general, the Pi lacks the processing power
+  and is probably not able to stream your media; therefore it is not
+  recommended using this add-on on such a device.
+- This add-on cannot add/mount any additional USB or other devices for you.
+  This is a Hass.io limitation. In case you'd like to use extra devices,
+  you'll have to modify the host system yourself and is not supported by the
+  Hass.io or Community add-ons team.
 
 ## Changelog & Releases
 
@@ -221,3 +265,4 @@ SOFTWARE.
 [releases]: https://github.com/hassio-addons/addon-plex/releases
 [repository]: https://github.com/hassio-addons/repository
 [semver]: http://semver.org/spec/v2.0.0.htm
+[webtools]: https://github.com/ukdtom/WebTools.bundle/wiki

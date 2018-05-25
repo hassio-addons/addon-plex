@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bash
 # ==============================================================================
-# Community Hass.io Add-ons: Plex
+# Community Hass.io Add-ons: Plex Media Server
 # Runs the Plex Media Server
 # ==============================================================================
 # shellcheck disable=SC1091

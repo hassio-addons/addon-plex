@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bash
 # ==============================================================================
-# Community Hass.io Add-ons: Plex
+# Community Hass.io Add-ons: Plex Media Server
 # Enables the WebTools plugin if the user requested that
 # ==============================================================================
 # shellcheck disable=SC1091

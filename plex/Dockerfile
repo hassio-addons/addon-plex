@@ -47,7 +47,7 @@ ARG BUILD_VERSION
 
 # Labels
 LABEL \
-    io.hass.name="Plex" \
+    io.hass.name="Plex Media Server" \
     io.hass.description="Recorded media, live TV, online news, and podcasts ready to stream." \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
@@ -55,7 +55,7 @@ LABEL \
     maintainer="Franck Nijhof <frenck@addons.community>" \
     org.label-schema.description="Recorded media, live TV, online news, and podcasts ready to stream." \
     org.label-schema.build-date=${BUILD_DATE} \
-    org.label-schema.name="Plex" \
+    org.label-schema.name="Plex Media Server" \
     org.label-schema.schema-version="1.0" \
     org.label-schema.url="https://community.home-assistant.io/?u=frenck" \
     org.label-schema.usage="https://github.com/hassio-addons/addon-plex/tree/master/README.md" \
