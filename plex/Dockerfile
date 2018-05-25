@@ -12,13 +12,20 @@ RUN \
         uuid-runtime=2.27.1-6ubuntu3 \
         unrar=1:5.3.2-1 \
     \
-    && curl -J -L -o /tmp/plexmediaserver.deb \
-        "https://downloads.plex.tv/plex-media-server/1.13.0.5023-31d3c0c65/plexmediaserver_1.13.0.5023-31d3c0c65_${BUILD_ARCH}.deb" \
-    && dpkg -i --force-confold /tmp/plexmediaserver.deb \
+    && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm7"; fi \
+    && if [ "${BUILD_ARCH}" = "amd64" ]; then ARCH="x86_64"; fi \
+    && if [ "${BUILD_ARCH}" = "armhf" ]; then ARCH="arm7"; fi \
+    && if [ "${BUILD_ARCH}" = "i386" ]; then ARCH="x86"; fi \
+    \
+    && curl -J -L -o /tmp/plexmediaserver.tgz \
+        "https://downloads.plex.tv/plex-media-server/1.13.0.5023-31d3c0c65/PlexMediaServer-1.13.0.5023-31d3c0c65-${ARCH}.spk" \
+    \
+    && mkdir /usr/lib/plexmediaserver \
+    && tar -xOf /tmp/plexmediaserver.tgz package.tgz | tar -xzf - -C /usr/lib/plexmediaserver/ \
+    \
     && apt-get -y autoremove \
     && apt-get -y clean \
     && rm -f -r /tmp/* \
-    && rm -rf /etc/default/plexmediaserver \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /var/lib/{apt,dpkg,cache,log}/* \
     && rm -rf /var/{cache,log}/*

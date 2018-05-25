@@ -215,6 +215,16 @@ markdownlint:
     - mdl --style all --warnings .
 
 # Build jobs
+build:armhf:
+  <<: *build
+  variables:
+    ADDON_ARCH: armhf
+
+build:aarch64:
+  <<: *build
+  variables:
+    ADDON_ARCH: aarch64
+
 build:i386:
   <<: *build
   variables:
@@ -226,6 +236,16 @@ build:amd64:
     ADDON_ARCH: amd64
 
 # Scan jobs
+clair:armhf:
+  <<: *scan
+  variables:
+    ADDON_ARCH: armhf
+
+clair:aarch64:
+  <<: *scan
+  variables:
+    ADDON_ARCH: aarch64
+
 clair:i386:
   <<: *scan
   variables:
@@ -237,6 +257,26 @@ clair:amd64:
     ADDON_ARCH: amd64
 
 # Deploy jobs
+deploy:armhf:
+  <<: *deploy
+  variables:
+    ADDON_ARCH: armhf
+  only:
+    - master
+    - /^v\d+\.\d+\.\d+(?:-(?:beta|rc)(?:(?:(?:\+|\.)?[a-zA-Z0-9]+)*)?)?$/
+  except:
+    - /^(?!master).+@/
+
+deploy:aarch64:
+  <<: *deploy
+  variables:
+    ADDON_ARCH: aarch64
+  only:
+    - master
+    - /^v\d+\.\d+\.\d+(?:-(?:beta|rc)(?:(?:(?:\+|\.)?[a-zA-Z0-9]+)*)?)?$/
+  except:
+    - /^(?!master).+@/
+
 deploy:i386:
   <<: *deploy
   variables:
