@@ -33,6 +33,7 @@ comparison to installing any other Hass.io add-on.
 1. Install the "Plex Media Server" add-on.
 1. Surf to <https://www.plex.tv/claim> and get your claim token.
 1. Update the add-on config with the claim code you've got in the previous step.
+1. Put the IP address of your Hass.io machine in the `advertise_ip` option.
 1. Save the add-on configuration.
 1. Start the "Plex Media Server" add-on.
 1. Check the logs of the "Plex Media Server" to see if everything went well.
@@ -76,6 +77,7 @@ Example add-on configuration:
 {
   "log_level": "info",
   "claim_code": "claim-cAMrqFrenckFU4x445Tn",
+  "advertise_ip": "192.168.1.234",
   "webtools": true
 }
 ```
@@ -110,6 +112,13 @@ In order to get your code surf to <https://www.plex.com/claim>.
 
 This code is only used once by the add-on. As soon as the
 server is successfully authenticated with Plex, the code may be removed.
+
+### Option: `advertise_ip`
+
+The Plex Media Server will not determine the IP of your Hass.io machine
+correctly. This option allows us to correct that and is therefore required.
+
+Put the IP address of your Hass.io machine in this field.
 
 ### Option: `webtools`
 
