@@ -46,6 +46,16 @@ directory.
 
 ## Docker status
 
+[![Docker Architecture][armhf-arch-shield]][armhf-dockerhub]
+[![Docker Version][armhf-version-shield]][armhf-microbadger]
+[![Docker Layers][armhf-layers-shield]][armhf-microbadger]
+[![Docker Pulls][armhf-pulls-shield]][armhf-dockerhub]
+
+[![Docker Architecture][aarch64-arch-shield]][aarch64-dockerhub]
+[![Docker Version][aarch64-version-shield]][aarch64-microbadger]
+[![Docker Layers][aarch64-layers-shield]][aarch64-microbadger]
+[![Docker Pulls][aarch64-pulls-shield]][aarch64-dockerhub]
+
 [![Docker Architecture][amd64-arch-shield]][amd64-dockerhub]
 [![Docker Version][amd64-version-shield]][amd64-microbadger]
 [![Docker Layers][amd64-layers-shield]][amd64-microbadger]
