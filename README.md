@@ -129,6 +129,30 @@ The plugin also allows you to add and install custom plugins.
 
 Set this variable to `true` to enable it.
 
+## Samba add-on conflicts
+
+Plex Media server uses port `1900` for access to the Plex DLNA Server. This port
+is also used by the Samba add-on.
+
+In case they conflict, the Plex Media Server add-on will fail to start.
+The following error message is shown in the Hass.io system log:
+
+```txt
+[hassio.docker] Can't start addon_40817795_plex: 500 Server Error:
+Internal Server Error ("driver failed programming external connectivity
+on endpoint addon_40817795_plex):
+Error starting userland proxy: listen udp 0.0.0.0:1900:
+bind: address already in use
+```
+
+You have two choices:
+
+- Disable or remove the Samba add-on
+- Change the port number 1900 to something else.
+
+The last option will cause you to lose the DLNA capabilities of the
+Plex Media Server.
+
 ## Known issues and limitations
 
 - This add-on does support ARM-based devices, nevertheless, they must
