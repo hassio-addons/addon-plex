@@ -4,6 +4,7 @@ FROM ${BUILD_FROM}
 
 # Setup base system
 ARG BUILD_ARCH=amd64
+
 RUN \
     apt-get update \
     \
@@ -11,6 +12,7 @@ RUN \
         xmlstarlet=1.6.1-1ubuntu1 \
         uuid-runtime=2.27.1-6ubuntu3 \
         unrar=1:5.3.2-1 \
+        unzip=6.0-20ubuntu1 \
     \
     && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm7"; fi \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then ARCH="x86_64"; fi \
@@ -23,6 +25,11 @@ RUN \
     && mkdir /usr/lib/plexmediaserver \
     && tar -xOf /tmp/plexmediaserver.tgz package.tgz | tar -xzf - -C /usr/lib/plexmediaserver/ \
     \
+    && curl -J -L -o /tmp/webtool.zip \
+        "https://github.com/ukdtom/WebTools.bundle/releases/download/3.0.0/WebTools.bundle.zip" \
+    && unzip -d /opt  /tmp/webtool.zip \
+    \
+    && apt-get -y remove --purge unzip \
     && apt-get -y autoremove \
     && apt-get -y clean \
     && rm -f -r /tmp/* \

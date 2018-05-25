@@ -27,18 +27,22 @@
     "32412/udp": 32412,
     "32413/udp": 32413,
     "32414/udp": 32414,
-    "32469/tcp": 32469
+    "32469/tcp": 32469,
+    "33400/tcp": 33400,
+    "33443/tcp": 33443
   },
   "hassio_api": true,
   "homeassistant_api": false,
   "host_network": false,
   "options": {
     "log_level": "info",
-    "claim_code": ""
+    "claim_code": "",
+    "webtools": false
   },
   "schema": {
     "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)",
-    "claim_code": "str"
+    "claim_code": "str",
+    "webtools": "bool"
   },
   "environment": {
     "LOG_FORMAT": "{LEVEL}: {MESSAGE}"
