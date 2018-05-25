@@ -8,6 +8,12 @@ source /usr/lib/hassio-addons/base.sh
 
 readonly prefs="/data/Plex Media Server/Preferences.xml"
 
+function getPref {
+    local key="$1"
+
+    xmlstarlet sel -T -t -m "/Preferences" -v "@${key}" -n "${prefs}"
+}
+
 function setPref {
     local key="$1"
     local value="$2"
