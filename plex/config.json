@@ -3,7 +3,7 @@
   "version": "dev",
   "slug": "plex",
   "description": "Recorded media, live TV, online news, and podcasts ready to stream.",
-  "url": "https://community.home-assistant.io/?u=frenck",
+  "url": "https://community.home-assistant.io/t/community-hass-io-add-on-plex-media-server/54383?u=frenck",
   "webui": "http://[HOST]:[PORT:32400]/web",
   "startup": "services",
   "arch": [

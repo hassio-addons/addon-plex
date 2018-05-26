@@ -304,7 +304,7 @@ SOFTWARE.
 [discord-shield]: https://img.shields.io/discord/330944238910963714.svg
 [discord]: https://discord.gg/c5DvZ4e
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
-[forum]: https://community.home-assistant.io/t/community-hass-io-add-on-plex/36742?u=frenck
+[forum]: https://community.home-assistant.io/t/community-hass-io-add-on-plex-media-server/54383?u=frenck
 [frenck]: https://github.com/frenck
 [gitlabci-shield]: https://gitlab.com/hassio-addons/addon-plex/badges/master/pipeline.svg
 [gitlabci]: https://gitlab.com/hassio-addons/addon-plex/pipelines
