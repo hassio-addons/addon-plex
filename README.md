@@ -129,6 +129,34 @@ The plugin also allows you to add and install custom plugins.
 
 Set this variable to `true` to enable it.
 
+## Solving connection issues with Plex
+
+Plex is pretty straightforward and pretty easy to set up. Most of the
+settings are detected automatically. Nevertheless, it fails to recognize
+its IP on your home network. This may cause connection issues with some
+Plex apps, e.g., the Samsung Tizen Plex app.
+
+This is not Plex its fault but is because of the Docker ecosystem, in
+which this add-on runs. Luckily, there is an option in Plex to help him
+with that, but it is a little hidden.
+
+- Login to the Plex web interface.
+- Goto setting.
+- Click the server tab.
+- On the left side, choose "Network".
+- Be sure you are looking at the advanced view.
+  There is a button "Show Advanced" in the top right.
+- Add your custom URLs to "Custom server access URLs" field.
+
+The custom URLs are additional URLs Plex clients will use to try to connect
+to Plex. You can list multiple if you'd like, separated by a comma.
+
+Example:
+
+```txt
+http://hassio.local:32400,http://192.168.1.88:32400,http://mydomain.duckdns.org:32400
+```
+
 ## AirSonos add-on conflicts
 
 Plex Media server uses port `1900` for access to the Plex DLNA Server. This port
