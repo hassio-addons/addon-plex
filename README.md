@@ -137,7 +137,7 @@ its IP on your home network. This may cause connection issues with some
 Plex apps, e.g., the Samsung Tizen Plex app.
 
 This is not Plex its fault but is because of the Docker ecosystem, in
-which this add-on runs. Luckily, there is an option in Plex to help him
+which this add-on runs. Luckily, there is an option in Plex to help
 with that, but it is a little hidden.
 
 - Login to the Plex web interface.
