@@ -193,6 +193,9 @@ Plex Media Server.
   This is a Hass.io limitation. In case you'd like to use extra devices,
   you'll have to modify the host system yourself and is not supported by the
   Hass.io or Community add-ons team.
+- A Plex Pass gives you exclusive access to new features, which are
+  available through a Beta version channel of the media server. At this
+  time, running this "Beta" version, is not supported by this add-on.
 
 ## Changelog & Releases
 
