@@ -9,7 +9,7 @@ RUN \
     apt-get update \
     \
     && apt-get install -y --no-install-recommends \
-        xmlstarlet=1.6.1-1ubuntu1 \
+        xmlstarlet=1.6.1-2 \
         uuid-runtime=2.27.1-6ubuntu3 \
         unrar=1:5.3.2-1 \
         unzip=6.0-20ubuntu1 \
