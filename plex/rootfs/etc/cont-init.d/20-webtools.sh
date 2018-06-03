@@ -9,6 +9,7 @@ source /usr/lib/hassio-addons/base.sh
 if hass.config.true 'webtools' && ! hass.directory_exists \
         "/data/Plex Media Server/Plug-ins/WebTools.bundle"; then
     hass.log.info 'Enabling WebTools plugin...'
+    mkdir -p "/data/Plex Media Server/Plug-ins/"
     ln -s "/opt/WebTools.bundle" "/data/Plex Media Server/Plug-ins/"
 fi
 
