@@ -12,7 +12,7 @@ RUN \
         xmlstarlet=1.6.1-2 \
         uuid-runtime=2.31.1-0.4ubuntu3 \
         unrar=1:5.5.8-1 \
-        unzip=6.0-20ubuntu1 \
+        unzip=6.0-21ubuntu1 \
     \
     && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm7"; fi \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then ARCH="x86_64"; fi \
