@@ -106,7 +106,7 @@ To allow your server to sign-in to your Plex account, it needs a so-called
 "Claim Code". Sign-ing into Plex allows Plex to locate and connect to
 your server and unlocks all kinds of features as well.
 
-In order to get your code surf to <https://www.plex.com/claim>.
+In order to get your code surf to <https://www.plex.tv/claim>.
 
 This code is only used once by the add-on. As soon as the
 server is successfully authenticated with Plex, the code may be removed.
