@@ -34,10 +34,11 @@ RUN \
     && apt-get -y remove --purge unzip \
     && apt-get -y autoremove \
     && apt-get -y clean \
-    && rm -f -r /tmp/* \
-    && rm -rf /var/lib/apt/lists/* \
-    && rm -rf /var/lib/{apt,dpkg,cache,log}/* \
-    && rm -rf /var/{cache,log}/*
+    \
+    && rm -fr \
+        /tmp/* \
+        /var/{cache,log}/* \
+        /var/lib/apt/lists/*
 
 # Copy root filesystem
 COPY rootfs /
