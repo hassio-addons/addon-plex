@@ -22,7 +22,7 @@ RUN \
     && if [ "${BUILD_ARCH}" = "i386" ]; then ARCH="x86"; fi \
     \
     && curl -J -L -o /tmp/plexmediaserver.tgz \
-        "https://downloads.plex.tv/plex-media-server/1.13.5.5291-6fa5e50a8/PlexMediaServer-1.13.5.5291-6fa5e50a8-${ARCH}.spk" \
+        "https://downloads.plex.tv/plex-media-server/1.13.7.5369-93c9f1259/PlexMediaServer-1.13.7.5369-93c9f1259-${ARCH}.spk" \
     \
     && mkdir /usr/lib/plexmediaserver \
     && tar -xOf /tmp/plexmediaserver.tgz package.tgz | tar -xzf - -C /usr/lib/plexmediaserver/ \
