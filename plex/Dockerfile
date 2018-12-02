@@ -16,7 +16,6 @@ RUN \
         unrar=1:5.5.8-1 \
         unzip=6.0-21ubuntu1 \
     \
-    && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm7"; fi \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then ARCH="x86_64"; fi \
     && if [ "${BUILD_ARCH}" = "armhf" ]; then ARCH="arm7"; fi \
     && if [ "${BUILD_ARCH}" = "i386" ]; then ARCH="x86"; fi \
