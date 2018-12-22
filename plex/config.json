@@ -13,6 +13,9 @@
   ],
   "machine": [
     "intel-nuc",
+    "odroid-c2",
+    "odroid-xu",
+    "orangepi-prime",
     "qemux86",
     "qemux86-64",
     "qemuarm",
@@ -20,9 +23,7 @@
     "raspberrypi2",
     "raspberrypi3",
     "raspberrypi3-64",
-    "tinker",
-    "odroid-c2",
-    "odroid-xu"
+    "tinker"
   ],
   "map": [
     "config:rw",
