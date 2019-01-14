@@ -42,7 +42,7 @@ comparison to installing any other Hass.io add-on.
 **NOTE**: Do not add this repository to Hass.io, please use:
 `https://github.com/hassio-addons/repository`.
 
-**NOTE**: When adding media locations, please use `/shares` as the base
+**NOTE**: When adding media locations, please use `/share` as the base
 directory.
 
 ## Docker status
