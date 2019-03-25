@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/ubuntu-base:2.3.1
+ARG BUILD_FROM=hassioaddons/ubuntu-base:3.0.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -17,7 +17,7 @@ RUN \
         unzip=6.0-21ubuntu1 \
     \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then ARCH="x86_64"; fi \
-    && if [ "${BUILD_ARCH}" = "armhf" ]; then ARCH="arm7"; fi \
+    && if [ "${BUILD_ARCH}" = "armv7" ]; then ARCH="arm7"; fi \
     && if [ "${BUILD_ARCH}" = "i386" ]; then ARCH="x86"; fi \
     \
     && curl -J -L -o /tmp/plexmediaserver.tgz \

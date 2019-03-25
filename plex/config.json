@@ -8,7 +8,7 @@
   "startup": "services",
   "arch": [
     "amd64",
-    "armhf",
+    "armv7",
     "i386"
   ],
   "machine": [
