@@ -1,11 +1,8 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv bashio
 # ==============================================================================
 # Community Hass.io Add-ons: Plex Media Server
 # Initializes all kinds of stuff on the first run of the Plex Media Server
 # ==============================================================================
-# shellcheck disable=SC1091
-source /usr/lib/hassio-addons/base.sh
-
 readonly prefs="/data/Plex Media Server/Preferences.xml"
 
 function getPref {
@@ -29,18 +26,24 @@ function setPref {
     fi
 }
 
-if ! hass.file_exists "${prefs}"; then
-    hass.log.info 'First run! Initializing configuration files...'
+if ! bashio::fs.file_exists "${prefs}"; then
+    bashio::log.info 'First run! Initializing configuration files...'
 
     if ! hass.config.has_value "claim_code"; then
-        hass.log.fatal "Aborting. A claim code is required!"
-        hass.die "Please check the installation manual of the add-on"
+        bashio::log.fatal
+        bashio::log.fatal "Add-on configuration is incomplete!"
+        bashio::log.fatal
+        bashio::log.fatal "Plex requires a claim code on the first run!"
+        bashio::log.fatal
+        bashio::log.fatal "Please check the installation manual of the add-on"
+        bashio::log.fatal
+        bashio::exit.nok
     fi
 
-    hass.log.debug "Generating unique serial & client id's..."
+    bashio::log.debug "Generating unique serial & client id's..."
     serial=$(uuidgen)
     clientId=$(sha1sum <<< "${serial} - Hass.io Plex add-on" | cut -b 1-40)
-    claim_code=$(hass.config.get 'claim_code')
+    claim_code=$(bashio::config 'claim_code')
     if ! response=$(curl --silent --show-error \
         --write-out '\n%{http_code}' --request POST \
         -H "X-Plex-Client-Identifier: ${clientId}" \
@@ -53,22 +56,28 @@ if ! hass.file_exists "${prefs}"; then
         -H 'X-Plex-Device: Linux' \
         "https://plex.tv/api/claim/exchange?token=${claim_code}"
     ); then
-        hass.log.debug "${response}"
-        hass.log.fatal "Something went wrong contacting the Plex API"
-        hass.die "Maybe your claim code is wrong or expired?"
+        bashio::log.debug "${response}"
+        bashio::log.fatal
+        bashio::log.fatal "Something went wrong contacting the Plex API"
+        bashio::log.fatal "Maybe your claim code is wrong or expired?"
+        bashio::log.fatal
+        bashio::exit.nok
+
     fi
 
     status=${response##*$'\n'}
     response=${response%$status}
 
     if [[ "${status}" -ne 200 ]]; then
-        hass.log.debug "${response}"
-        hass.log.fatal "Something went wrong contacting the Plex API"
-        hass.die "Maybe your claim code is wrong or expired?"
+        bashio::log.debug "${response}"
+        bashio::log.fatal
+        bashio::log.fatal "Something went wrong contacting the Plex API"
+        bashio::log.fatal "Maybe your claim code is wrong or expired?"
+        bashio::exit.nok
     fi
 
-    hass.log.debug "Plex API HTTP Response code: ${status}"
-    hass.log.debug "Plex API Response: ${response}"
+    bashio::log.debug "Plex API HTTP Response code: ${status}"
+    bashio::log.debug "Plex API Response: ${response}"
 
     token="$(echo "${response}" | sed -n 's/.*<authentication-token>\(.*\)<\/authentication-token>.*/\1/p')"
 

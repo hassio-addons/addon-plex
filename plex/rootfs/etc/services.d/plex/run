@@ -1,12 +1,9 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv bashio
 # ==============================================================================
 # Community Hass.io Add-ons: Plex Media Server
 # Runs the Plex Media Server
 # ==============================================================================
-# shellcheck disable=SC1091
-source /usr/lib/hassio-addons/base.sh
-
-hass.log.info 'Starting the Plex Media Server'
+bashio::log.info 'Starting the Plex Media Server...'
 
 export LD_LIBRARY_PATH=/usr/lib/plexmediaserver
 export PLEX_MEDIA_SERVER_HOME=/usr/lib/plexmediaserver
