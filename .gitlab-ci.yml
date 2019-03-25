@@ -6,10 +6,10 @@ variables:
   ADDON_SLUG: "plex"
   ADDON_TARGET: "plex"
 
-  ADDON_AARCH64: "false"
   ADDON_ARMHF: "false"
   ADDON_LEGACY_TAGS: "true"
 
+  ADDON_AARCH64_BASE: "hassioaddons/ubuntu-base-aarch64:3.0.0"
   ADDON_AMD64_BASE: "hassioaddons/ubuntu-base-amd64:3.0.0"
   ADDON_ARMV7_BASE: "hassioaddons/ubuntu-base-armv7:3.0.0"
   ADDON_I386_BASE: "hassioaddons/ubuntu-base-i386:3.0.0"
