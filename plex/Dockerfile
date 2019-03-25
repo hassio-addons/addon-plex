@@ -17,11 +17,11 @@ RUN \
         unzip=6.0-21ubuntu1 \
     \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then ARCH="x86_64"; fi \
-    && if [ "${BUILD_ARCH}" = "armv7" ]; then ARCH="arm7"; fi \
+    && if [ "${BUILD_ARCH}" = "armv7" ]; then ARCH="arm7hf"; fi \
     && if [ "${BUILD_ARCH}" = "i386" ]; then ARCH="x86"; fi \
     \
     && curl -J -L -o /tmp/plexmediaserver.tgz \
-        "https://downloads.plex.tv/plex-media-server/1.14.1.5488-cc260c476/PlexMediaServer-1.14.1.5488-cc260c476-${ARCH}.spk" \
+        "https://downloads.plex.tv/plex-media-server-new/1.15.2.793-782228f99/synology/PlexMediaServer-1.15.2.793-782228f99-${ARCH}.spk" \
     \
     && mkdir /usr/lib/plexmediaserver \
     && tar -xOf /tmp/plexmediaserver.tgz package.tgz | tar -xzf - -C /usr/lib/plexmediaserver/ \
