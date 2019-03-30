@@ -18,7 +18,7 @@ RUN \
     \
     && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="aarch64"; fi \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then ARCH="x86_64"; fi \
-    && if [ "${BUILD_ARCH}" = "armv7" ]; then ARCH="arm7hf"; fi \
+    && if [ "${BUILD_ARCH}" = "armv7" ]; then ARCH="armv7hf"; fi \
     && if [ "${BUILD_ARCH}" = "i386" ]; then ARCH="x86"; fi \
     \
     && curl -J -L -o /tmp/plexmediaserver.tgz \
