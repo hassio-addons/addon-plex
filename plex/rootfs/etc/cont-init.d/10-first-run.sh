@@ -29,13 +29,13 @@ function setPref {
 if ! bashio::fs.file_exists "${prefs}"; then
     bashio::log.info 'First run! Initializing configuration files...'
 
-    if ! hass.config.has_value "claim_code"; then
+    if ! bashio::config.has_value "claim_code"; then
         bashio::log.fatal
         bashio::log.fatal "Add-on configuration is incomplete!"
         bashio::log.fatal
         bashio::log.fatal "Plex requires a claim code on the first run!"
         bashio::log.fatal
-        bashio::log.fatal "Please check the installation manual of the add-on"
+        bashio::log.fatal "Please check the installation manual of the add-on."
         bashio::log.fatal
         bashio::exit.nok
     fi
