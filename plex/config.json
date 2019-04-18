@@ -31,6 +31,19 @@
     "33400/tcp": 33400,
     "33443/tcp": 33443
   },
+  "ports_description": {
+    "1900/udp": "Plex DLNA Server",
+    "3005/tcp": "Plex Home Theater via Plex Companion",
+    "8324/tcp": "Plex for Roku via Plex Companion",
+    "32400/tcp": "Plex Media Server Interface",
+    "32410/udp": "GDM network discovery",
+    "32412/udp": "GDM network discovery",
+    "32413/udp": "GDM network discovery",
+    "32414/udp": "GDM network discovery",
+    "32469/tcp": "Plex DLNA Server",
+    "33400/tcp": "WebTools",
+    "33443/tcp": "WebTools"
+  },
   "hassio_api": true,
   "hassio_role": "default",
   "homeassistant_api": false,
