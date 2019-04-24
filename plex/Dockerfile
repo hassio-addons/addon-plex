@@ -22,7 +22,7 @@ RUN \
     && if [ "${BUILD_ARCH}" = "i386" ]; then ARCH="x86"; fi \
     \
     && curl -J -L -o /tmp/plexmediaserver.tgz \
-        "https://downloads.plex.tv/plex-media-server-new/1.15.4.919-8e2884e4b/synology/PlexMediaServer-1.15.4.919-8e2884e4b-${ARCH}.spk" \
+        "https://downloads.plex.tv/plex-media-server-new/1.15.4.993-bb4a2cb6c/synology/PlexMediaServer-1.15.4.993-bb4a2cb6c-${ARCH}.spk" \
     \
     && mkdir /usr/lib/plexmediaserver \
     && tar -xOf /tmp/plexmediaserver.tgz package.tgz | tar -xzf - -C /usr/lib/plexmediaserver/ \
