@@ -13,7 +13,6 @@
     "i386"
   ],
   "map": [
-    "config:rw",
     "share:rw",
     "ssl"
   ],
