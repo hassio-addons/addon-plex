@@ -36,17 +36,14 @@ and streams them to all of your devices.
 The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Hass.io add-on.
 
-1. [Add our Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install the "Plex Media Server" add-on.
+1. Search for the “Plex Media Server” add-on in the Hass.io 166 add-on store
+   and install it.
 1. Surf to <https://www.plex.tv/claim> and get your claim token.
 1. Update the add-on config with the claim code you've got in the previous step.
 1. Save the add-on configuration.
 1. Start the "Plex Media Server" add-on.
 1. Check the logs of the "Plex Media Server" to see if everything went well.
 1. Login to the Plex admin interface and complete the setup process.
-
-**NOTE**: Do not add this repository to Hass.io, please use:
-`https://github.com/hassio-addons/repository`.
 
 **NOTE**: When adding media locations, please use `/share` as the base
 directory.
