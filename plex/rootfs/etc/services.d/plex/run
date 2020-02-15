@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Hass.io Add-ons: Plex Media Server
+# Home Assistant Community Add-on: Plex Media Server
 # Runs the Plex Media Server
 # ==============================================================================
 bashio::log.info 'Starting the Plex Media Server...'

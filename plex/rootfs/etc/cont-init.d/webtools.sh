@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Hass.io Add-ons: Plex Media Server
+# Home Assistant Community Add-on: Plex Media Server
 # Enables the WebTools plugin if the user requested that
 # ==============================================================================
 if bashio::config.true 'webtools' && ! bashio::fs.directory_exists \

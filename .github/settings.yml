@@ -1,8 +1,8 @@
 ---
 repository:
-  description: "Plex Media Server - Community Hass.io Add-on for Home Assistant"
+  description: "Plex Media Server - Home Assistant Community Add-ons"
   homepage: https://addons.community
-  topics: plex, plex-media-server, hassio-addons, hassio, hass, home-assistant, homeassistant
+  topics: plex, plex-media-server, addon, addons, home-assistant, homeassistant
   private: false
   has_issues: true
   has_projects: false

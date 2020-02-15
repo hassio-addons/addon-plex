@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Hass.io Add-ons: Plex Media Server
+# Home Assistant Community Add-on: Plex Media Server
 # Initializes all kinds of stuff on the first run of the Plex Media Server
 # ==============================================================================
 readonly prefs="/data/Plex Media Server/Preferences.xml"
