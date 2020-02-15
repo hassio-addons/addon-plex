@@ -54,12 +54,10 @@ directory.
 
 Example add-on configuration:
 
-```json
-{
-  "log_level": "info",
-  "claim_code": "claim-cAMrqFrenckFU4x445Tn",
-  "webtools": true
-}
+```yaml
+log_level: info
+claim_code: claim-cAMrqFrenckFU4x445Tn
+webtools: true
 ```
 
 **Note**: _This is just an example, don't copy and paste it! Create your own!_
