@@ -11,5 +11,22 @@ export PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS=6
 export PLEX_MEDIA_SERVER_INFO_DEVICE="Hass.io"
 export PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR=/data
 
+
+# Mount CIFS Share if configured and if Protection Mode is active
+if bashio::config.has_value 'networkdisks'; then
+    MOREDISKS=$(bashio::config 'networkdisks')
+    CIFS_USERNAME=$(bashio::config 'cifsusername')
+    CIFS_PASSWORD=$(bashio::config 'cifspassword')
+    bashio::log.info "Network Disks mounting.. ${MOREDISKS}" && \
+    for disk in $MOREDISKS 
+    do
+        bashio::log.info "Mount ${disk}"
+        mkdir -p /$disk && \
+            mount -t cifs -o username=$CIFS_USERNAME,password=$CIFS_PASSWORD $disk /$disk && \
+            bashio::log.info "Success!"   
+    done || \
+    bashio::log.warning "Protection mode is ON. Unable to mount external drivers!"
+fi
+
 # Run the Plex Media Server
 exec /usr/lib/plexmediaserver/Plex\ Media\ Server

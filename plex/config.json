@@ -22,6 +22,7 @@
     "33400/tcp": 33400,
     "33443/tcp": 33443
   },
+  "privileged": [    "SYS_ADMIN","DAC_READ_SEARCH"  ], "full_access": true,
   "ports_description": {
     "1900/udp": "Plex DLNA Server",
     "3005/tcp": "Plex Home Theater via Plex Companion",
@@ -41,11 +42,17 @@
   "host_network": false,
   "options": {
     "claim_code": "",
-    "webtools": false
+    "webtools": false,
+    "networkdisks": ["<//SERVER/SHARE>"],
+    "cifsusername": "<username>",
+    "cifspassword": "<password>"
   },
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)?",
     "claim_code": "str",
-    "webtools": "bool"
+    "webtools": "bool",
+    "networkdisks": ["str"],
+    "cifsusername": "str",
+    "cifspassword": "str"
   }
 }
