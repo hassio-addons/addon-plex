@@ -109,6 +109,19 @@ The plugin also allows you to add and install custom plugins.
 
 Set this variable to `true` to enable it.
 
+### Option: `networkdisks`  <span style="color:red">PROTECTION MODE NEED TO DISABLED TO WORK</span>
+
+Is the list of networks share to mount at boot. The mounted driver is on /<SERVER>/<SHARE> directory.
+
+#### Option: `cifsusername` 
+
+The username to use to mount the network shares
+
+#### Option: `cifspassword` 
+
+The password used to mount the networks shares
+
+
 ## Solving connection issues with Plex
 
 Plex is pretty straightforward and pretty easy to set up. Most of the
