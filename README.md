@@ -111,7 +111,7 @@ Set this variable to `true` to enable it.
 
 ### Option: `networkdisks`  <span style="color:red">PROTECTION MODE NEED TO DISABLED TO WORK</span>
 
-Is the list of networks share to mount at boot. The mounted driver is on /<SERVER>/<SHARE> directory.
+Is the list of networks share to mount at boot. The mounted driver is on `/<SERVER>/<SHARE>` directory.
 
 #### Option: `cifsusername` 
 
