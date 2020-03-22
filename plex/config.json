@@ -7,7 +7,7 @@
   "webui": "http://[HOST]:[PORT:32400]/web",
   "startup": "services",
   "arch": ["aarch64", "amd64", "armv7", "i386"],
-  "map": ["share:rw", "ssl"],
+  "map": ["share:rw", "ssl", "config"],
   "boot": "auto",
   "ports": {
     "1900/udp": 1900,
