@@ -12,7 +12,7 @@ RUN \
     \
     && apt-get install -y --no-install-recommends \
         xmlstarlet=1.6.1-2 \
-        uuid-runtime=2.31.1-0.4ubuntu3.6 \
+        uuid-runtime=2.31.1-0.4ubuntu3.7 \
         unrar=1:5.5.8-1 \
         unzip=6.0-21ubuntu1 \
     \
