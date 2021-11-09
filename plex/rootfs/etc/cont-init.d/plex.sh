@@ -66,7 +66,7 @@ if ! bashio::fs.file_exists "${prefs}"; then
     fi
 
     status=${response##*$'\n'}
-    response=${response%$status}
+    response="${response%"$status"}"
 
     if [[ "${status}" -ne 200 ]]; then
         bashio::log.debug "${response}"
