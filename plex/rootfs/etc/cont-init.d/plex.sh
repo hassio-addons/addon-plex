@@ -65,6 +65,7 @@ if ! bashio::fs.file_exists "${prefs}"; then
 
     fi
 
+    # shellcheck disable=SC2295
     status="${response##*$'\n'}"
     response="${response%$status}"
 
