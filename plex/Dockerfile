@@ -19,7 +19,6 @@ RUN \
     && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="aarch64"; fi \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then ARCH="x86_64"; fi \
     && if [ "${BUILD_ARCH}" = "armv7" ]; then ARCH="armv7hf"; fi \
-    && if [ "${BUILD_ARCH}" = "i386" ]; then ARCH="x86"; fi \
     \
     && curl -J -L -o /tmp/plexmediaserver.tgz \
         "https://downloads.plex.tv/plex-media-server-new/1.24.0.4930-ab6e1a058/synology/PlexMediaServer-1.24.0.4930-ab6e1a058-${ARCH}_DSM6.spk" \

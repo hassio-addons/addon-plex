@@ -10,7 +10,6 @@ arch:
   - aarch64
   - amd64
   - armv7
-  - i386
 map:
   - media:rw
   - share:rw
