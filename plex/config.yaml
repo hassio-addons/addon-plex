@@ -39,8 +39,8 @@ ports_description:
   33443/tcp: WebTools
 hassio_api: true
 backup_exclude:
-  - '**/Plex Media Server/Cache/**'
-  - '**/Plex Media Server/Plug-in Support/Caches/**'
+  - "**/Plex Media Server/Cache/**"
+  - "**/Plex Media Server/Plug-in Support/Caches/**"
 options:
   claim_code: ""
   webtools: false
