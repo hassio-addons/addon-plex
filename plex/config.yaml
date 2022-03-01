@@ -42,7 +42,6 @@ backup_exclude:
   - "**/Plex Media Server/Cache/**"
   - "**/Plex Media Server/Plug-in Support/Caches/**"
   - "**/Plex Media Server/Logs/**"
-  - "**/Plex Media Server/Metadata/**"
   - "**/Plex Media Server/Media/**"
   - "**/Plex Media Server/Crash Reports/**"
   - "**/Plex Media Server/Diagnostics/**"
