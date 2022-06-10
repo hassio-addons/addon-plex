@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/ubuntu-base/amd64:6.2.1
+ARG BUILD_FROM=ghcr.io/hassio-addons/ubuntu-base/amd64:8.0.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -11,10 +11,10 @@ RUN \
     apt-get update \
     \
     && apt-get install -y --no-install-recommends \
-        xmlstarlet=1.6.1-2 \
-        uuid-runtime=2.31.1-0.4ubuntu3.7 \
-        unrar=1:5.5.8-1 \
-        unzip=6.0-21ubuntu1 \
+        xmlstarlet=1.6.1-2build1 \
+        uuid-runtime=2.34-0.1ubuntu9.3 \
+        unrar=1:5.6.6-2build1 \
+        unzip=6.0-25ubuntu1 \
     \
     && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="aarch64"; fi \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then ARCH="x86_64"; fi \

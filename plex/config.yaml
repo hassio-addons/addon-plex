@@ -7,6 +7,7 @@ url: https://github.com/hassio-addons/addon-plex
 codenotary: codenotary@frenck.dev
 webui: http://[HOST]:[PORT:32400]/web
 startup: services
+init: false
 arch:
   - aarch64
   - amd64
