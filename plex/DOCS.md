@@ -35,7 +35,6 @@ Example add-on configuration:
 ```yaml
 log_level: info
 claim_code: claim-cAMrqFrenckFU4x445Tn
-webtools: true
 ```
 
 **Note**: _This is just an example, don't copy and paste it! Create your own!_
@@ -68,24 +67,6 @@ In order to get your code surf to <https://www.plex.tv/claim>.
 
 This code is only used once by the add-on. As soon as the
 server is successfully authenticated with Plex, the code may be removed.
-
-### Option: `webtools`
-
-[WebTools][webtools] is a plug-in that contains a collection of tools
-for the Plex Media Server.
-
-Some of the tools:
-
-- Manage Subs (Subtitles)
-- Logs (PMS)
-- UAS (Unsupported App Store)
-- FindMedia
-- PlayLists
-- TechInfo
-
-The plugin also allows you to add and install custom plugins.
-
-Set this variable to `true` to enable it.
 
 ## Solving connection issues with Plex
 
@@ -202,4 +183,3 @@ SOFTWARE.
 [reddit]: https://reddit.com/r/homeassistant
 [releases]: https://github.com/hassio-addons/addon-plex/releases
 [semver]: http://semver.org/spec/v2.0.0.htm
-[webtools]: https://github.com/ukdtom/WebTools.bundle/wiki

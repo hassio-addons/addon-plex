@@ -25,8 +25,6 @@ ports:
   32413/udp: 32413
   32414/udp: 32414
   32469/tcp: 32469
-  33400/tcp: 33400
-  33443/tcp: 33443
 ports_description:
   3005/tcp: Plex Home Theater via Plex Companion
   8324/tcp: Plex for Roku via Plex Companion
@@ -36,8 +34,6 @@ ports_description:
   32413/udp: GDM network discovery
   32414/udp: GDM network discovery
   32469/tcp: Plex DLNA Server
-  33400/tcp: WebTools
-  33443/tcp: WebTools
 hassio_api: true
 backup_exclude:
   - "**/Plex Media Server/Cache/**"
@@ -47,8 +43,6 @@ backup_exclude:
   - "**/Plex Media Server/Diagnostics/**"
 options:
   claim_code: ""
-  webtools: false
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   claim_code: str
-  webtools: bool
