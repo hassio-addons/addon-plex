@@ -14,7 +14,6 @@ RUN \
         xmlstarlet=1.6.1-2build1 \
         uuid-runtime=2.34-0.1ubuntu9.3 \
         unrar=1:5.6.6-2build1 \
-        unzip=6.0-25ubuntu1 \
     \
     && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="aarch64"; fi \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then ARCH="x86_64"; fi \
@@ -26,14 +25,7 @@ RUN \
     && mkdir /usr/lib/plexmediaserver \
     && tar -xOf /tmp/plexmediaserver.tgz package.tgz | tar -xzf - -C /usr/lib/plexmediaserver/ \
     \
-    && curl -J -L -o /tmp/webtool.zip \
-        "https://github.com/ukdtom/WebTools.bundle/releases/download/3.0.0/WebTools.bundle.zip" \
-    && unzip -d /opt  /tmp/webtool.zip \
-    \
-    && apt-get -y remove --purge unzip \
-    && apt-get -y autoremove \
     && apt-get -y clean \
-    \
     && rm -fr \
         /tmp/* \
         /var/{cache,log}/* \
