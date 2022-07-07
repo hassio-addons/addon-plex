@@ -20,7 +20,7 @@ RUN \
     && if [ "${BUILD_ARCH}" = "armv7" ]; then ARCH="armv7hf"; fi \
     \
     && curl -J -L -o /tmp/plexmediaserver.tgz \
-        "https://downloads.plex.tv/plex-media-server-new/1.26.2.5797-5bd057d2b/synology/PlexMediaServer-1.26.2.5797-5bd057d2b-${ARCH}_DSM6.spk" \
+        "https://downloads.plex.tv/plex-media-server-new/1.27.2.5929-a806c5905/synology/PlexMediaServer-1.27.2.5929-a806c5905-${ARCH}_DSM6.spk" \
     \
     && mkdir /usr/lib/plexmediaserver \
     && tar -xOf /tmp/plexmediaserver.tgz package.tgz | tar -xzf - -C /usr/lib/plexmediaserver/ \
