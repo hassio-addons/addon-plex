@@ -1,5 +1,6 @@
 ---
 name: Plex Media Server
+panel_icon: mdi:plex
 version: dev
 slug: plex
 description: Recorded media, live TV, online news, and podcasts ready to stream.
