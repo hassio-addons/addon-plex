@@ -4,6 +4,7 @@
 # Initializes all kinds of stuff on the first run of the Plex Media Server
 # ==============================================================================
 readonly prefs="/data/Plex Media Server/Preferences.xml"
+readonly claim="/data/claim_code"
 
 function getPref {
     local key="$1"
@@ -26,9 +27,11 @@ function setPref {
     fi
 }
 
-if ! bashio::fs.file_exists "${prefs}"; then
-    bashio::log.info 'First run! Initializing configuration files...'
+if ! bashio::fs.file_exists "${claim}"; then
+    touch "${claim}"
+fi
 
+if ! bashio::fs.file_exists "${prefs}"; then
     if ! bashio::config.has_value "claim_code"; then
         bashio::log.fatal
         bashio::log.fatal "Add-on configuration is incomplete!"
@@ -40,10 +43,30 @@ if ! bashio::fs.file_exists "${prefs}"; then
         bashio::exit.nok
     fi
 
-    bashio::log.debug "Generating unique serial & client id's..."
+    bashio::log.info 'First run! Initializing configuration files...'
+
+    mkdir -p "$(dirname "${prefs}")"
+    cat > "${prefs}" <<-EOF
+<?xml version="1.0" encoding="utf-8"?>
+<Preferences/>
+EOF
+
     serial=$(uuidgen)
-    clientId=$(sha1sum <<< "${serial} - Hass.io Plex add-on" | cut -b 1-40)
-    claim_code=$(bashio::config 'claim_code')
+    clientId=$(sha1sum <<< "${serial} - Home Assistant Plex add-on" | cut -b 1-40)
+
+    setPref "MachineIdentifier" "${serial}"
+    setPref "ProcessedMachineIdentifier" "${clientId}"
+    setPref "FriendlyName" "Home Assistant"
+
+    mkdir -p "/share/transcode"
+    setPref "TranscoderTempDirectory" "/share/transcode"
+fi
+
+previous_claim_code=$(<"${claim}")
+claim_code=$(bashio::config 'claim_code')
+if bashio::var.has_value "${claim_code}" && [[ "${previous_claim_code}" != "${claim_code}" ]]; then
+    bashio::log.debug "Generating unique serial & client id's..."
+    clientId=$(getPref "ProcessedMachineIdentifier")
     if ! response=$(curl --silent --show-error \
         --write-out '\n%{http_code}' --request POST \
         -H "X-Plex-Client-Identifier: ${clientId}" \
@@ -62,7 +85,6 @@ if ! bashio::fs.file_exists "${prefs}"; then
         bashio::log.fatal "Maybe your claim code is wrong or expired?"
         bashio::log.fatal
         bashio::exit.nok
-
     fi
 
     status=${response##*$'\n'}
@@ -81,18 +103,6 @@ if ! bashio::fs.file_exists "${prefs}"; then
 
     token="$(echo "${response}" | sed -n 's/.*<authentication-token>\(.*\)<\/authentication-token>.*/\1/p')"
 
-    mkdir -p "$(dirname "${prefs}")"
-
-    cat > "${prefs}" <<-EOF
-<?xml version="1.0" encoding="utf-8"?>
-<Preferences/>
-EOF
-
-    setPref "MachineIdentifier" "${serial}"
-    setPref "ProcessedMachineIdentifier" "${clientId}"
     setPref "PlexOnlineToken" "${token}"
-    setPref "FriendlyName" "Hass.io"
-
-    mkdir -p "/share/transcode"
-    setPref "TranscoderTempDirectory" "/share/transcode"
+    echo "${claim_code}" > "${claim}"
 fi
