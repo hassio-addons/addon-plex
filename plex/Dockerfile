@@ -15,15 +15,14 @@ RUN \
         uuid-runtime=2.37.2-4ubuntu3 \
         unrar=1:6.1.5-1 \
     \
-    && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="aarch64"; fi \
-    && if [ "${BUILD_ARCH}" = "amd64" ]; then ARCH="x86_64"; fi \
-    && if [ "${BUILD_ARCH}" = "armv7" ]; then ARCH="armv7hf"; fi \
+    && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
+    && if [ "${BUILD_ARCH}" = "amd64" ]; then ARCH="amd64"; fi \
+    && if [ "${BUILD_ARCH}" = "armv7" ]; then ARCH="armhf"; fi \
     \
-    && curl -J -L -o /tmp/plexmediaserver.tgz \
-        "https://downloads.plex.tv/plex-media-server-new/1.32.4.7195-7c8f9d3b6/synology/PlexMediaServer-1.32.4.7195-7c8f9d3b6-${ARCH}_DSM6.spk" \
+    && curl -J -L -o /tmp/plexmediaserver.deb \
+        "https://downloads.plex.tv/plex-media-server-new/1.32.4.7195-7c8f9d3b6/debian/plexmediaserver_1.32.4.7195-7c8f9d3b6_${ARCH}.deb" \
     \
-    && mkdir /usr/lib/plexmediaserver \
-    && tar -xOf /tmp/plexmediaserver.tgz package.tgz | tar -xzf - -C /usr/lib/plexmediaserver/ \
+    && dpkg --install /tmp/plexmediaserver.deb \
     \
     && apt-get -y clean \
     && rm -fr \
