@@ -16,6 +16,9 @@ map:
   - media:rw
   - share:rw
   - ssl
+devices:
+  - /dev/dri
+  - /dev/vchiq
 ports:
   3005/tcp: 3005
   8324/tcp: 8324
