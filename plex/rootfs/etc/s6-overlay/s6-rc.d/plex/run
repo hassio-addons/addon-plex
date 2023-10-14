@@ -12,5 +12,11 @@ export PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS=6
 export PLEX_MEDIA_SERVER_INFO_DEVICE="Hass.io"
 export PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR=/data
 
+# Check if "/data/Plex Media Server/plexmediaserver.pid" exists, if so remove it
+if bashio::fs.file_exists '/data/Plex Media Server/plexmediaserver.pid'; then
+    bashio::log.debug 'Removing stale PID file...'
+    rm -f /data/Plex\ Media\ Server/plexmediaserver.pid
+fi
+
 # Run the Plex Media Server
 exec /usr/lib/plexmediaserver/Plex\ Media\ Server
