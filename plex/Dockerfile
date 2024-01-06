@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/ubuntu-base:9.0.1
+ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base:7.3.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -8,12 +8,14 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Setup base system
 ARG BUILD_ARCH=amd64
 RUN \
-    apt-get update \
+    echo "deb http://deb.debian.org/debian bookworm contrib non-free" \
+        >> /etc/apt/sources.list \
+    && apt-get update \
     \
     && apt-get install -y --no-install-recommends \
-        xmlstarlet=1.6.1-2.1 \
-        uuid-runtime=2.37.2-4ubuntu3 \
-        unrar=1:6.1.5-1 \
+        xmlstarlet=1.6.1-3 \
+        uuid-runtime=2.38.1-5+b1 \
+        unrar=1:6.2.6-1+deb12u1 \
     \
     && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then ARCH="amd64"; fi \
