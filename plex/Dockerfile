@@ -22,7 +22,7 @@ RUN \
     && if [ "${BUILD_ARCH}" = "armv7" ]; then ARCH="armhf"; fi \
     \
     && curl -J -L -o /tmp/plexmediaserver.deb \
-        "https://downloads.plex.tv/plex-media-server-new/1.40.2.8395-c67dce28e/debian/plexmediaserver_1.40.2.8395-c67dce28e_${ARCH}.deb" \
+        "https://downloads.plex.tv/plex-media-server-new/1.40.4.8679-424562606/debian/plexmediaserver_1.40.4.8679-424562606_${ARCH}.deb" \
     \
     && dpkg --install /tmp/plexmediaserver.deb \
     \
