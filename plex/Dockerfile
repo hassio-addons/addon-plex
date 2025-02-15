@@ -14,7 +14,7 @@ RUN \
     \
     && apt-get install -y --no-install-recommends \
         xmlstarlet=1.6.1-3 \
-        uuid-runtime=2.38.1-5+deb12u1 \
+        uuid-runtime=2.38.1-5+deb12u3 \
         unrar=1:6.2.6-1+deb12u1 \
     \
     && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
