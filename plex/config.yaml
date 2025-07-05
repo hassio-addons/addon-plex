@@ -47,6 +47,8 @@ backup_exclude:
   - "**/Plex Media Server/Logs/**"
   - "**/Plex Media Server/Crash Reports/**"
   - "**/Plex Media Server/Diagnostics/**"
+  - "**/Plex Media Server/Media/**"
+  - "**/Plex Media Server/Metadata/**"
 options:
   claim_code: ""
 schema:
