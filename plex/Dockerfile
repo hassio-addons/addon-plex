@@ -7,6 +7,9 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base system
 ARG BUILD_ARCH=amd64
+ARG PLEX_VERSION=1.42.1.10060
+ARG PLEX_HASH=4e8b05daf
+
 RUN \
     echo "deb http://deb.debian.org/debian bookworm contrib non-free" \
         >> /etc/apt/sources.list \
@@ -22,7 +25,7 @@ RUN \
     && if [ "${BUILD_ARCH}" = "armv7" ]; then ARCH="armhf"; fi \
     \
     && curl -J -L -o /tmp/plexmediaserver.deb \
-        "https://downloads.plex.tv/plex-media-server-new/1.41.8.9834-071366d65/debian/plexmediaserver_1.41.8.9834-071366d65_${ARCH}.deb" \
+        "https://downloads.plex.tv/plex-media-server-new/${PLEX_VERSION}-${PLEX_HASH}/debian/plexmediaserver_${PLEX_VERSION}-${PLEX_HASH}_${ARCH}.deb" \
     \
     && dpkg --install /tmp/plexmediaserver.deb \
     \
