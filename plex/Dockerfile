@@ -10,6 +10,7 @@ ARG BUILD_ARCH=amd64
 ARG PLEX_VERSION=1.42.2.10156
 ARG PLEX_HASH=f737b826c
 
+# hadolint ignore=DL3008
 RUN \
     echo "deb http://deb.debian.org/debian trixie contrib non-free" \
         >> /etc/apt/sources.list \
