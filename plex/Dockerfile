@@ -22,7 +22,6 @@ RUN \
     \
     && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then ARCH="amd64"; fi \
-    && if [ "${BUILD_ARCH}" = "armv7" ]; then ARCH="armhf"; fi \
     \
     && curl -J -L -o /tmp/plexmediaserver.deb \
         "https://downloads.plex.tv/plex-media-server-new/${PLEX_VERSION}-${PLEX_HASH}/debian/plexmediaserver_${PLEX_VERSION}-${PLEX_HASH}_${ARCH}.deb" \
