@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base:7.7.0
+ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base:8.1.4
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -10,15 +10,16 @@ ARG BUILD_ARCH=amd64
 ARG PLEX_VERSION=1.42.2.10156
 ARG PLEX_HASH=f737b826c
 
+# hadolint ignore=DL3008
 RUN \
-    echo "deb http://deb.debian.org/debian bookworm contrib non-free" \
+    echo "deb http://deb.debian.org/debian trixie contrib non-free" \
         >> /etc/apt/sources.list \
     && apt-get update \
     \
     && apt-get install -y --no-install-recommends \
-        xmlstarlet=1.6.1-3 \
-        uuid-runtime=2.38.1-5+deb12u3 \
-        unrar=1:6.2.6-1+deb12u1 \
+        xmlstarlet>="1.6.1-4" \
+        uuid-runtime=2.41-5 \
+        unrar=1:7.1.8-1 \
     \
     && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
     && if [ "${BUILD_ARCH}" = "amd64" ]; then ARCH="amd64"; fi \
