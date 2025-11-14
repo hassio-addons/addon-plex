@@ -16,7 +16,7 @@ RUN \
     && apt-get update \
     \
     && apt-get install -y --no-install-recommends \
-        xmlstarlet>1.6.1-4 \
+        xmlstarlet>="1.6.1-4" \
         uuid-runtime=2.41-5 \
         unrar=1:7.1.8-1 \
     \
