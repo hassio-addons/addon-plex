@@ -7,8 +7,8 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base system
 ARG BUILD_ARCH=amd64
-ARG PLEX_VERSION=1.42.1.10060
-ARG PLEX_HASH=4e8b05daf
+ARG PLEX_VERSION=1.42.2.10156
+ARG PLEX_HASH=f737b826c
 
 RUN \
     echo "deb http://deb.debian.org/debian bookworm contrib non-free" \
